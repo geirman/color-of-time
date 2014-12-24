@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Color of Time</title>
+ 
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    	span {
+    		display: inline-block;
+    		width: 50px;
+    		height: 50px;
+    		margin-right: 1px;
+    		margin-bottom: -4px;
+    	}
+    </style>
+ 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="container">
+    <h1>Color of Time</h1>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+ 		(function main(){
+ 			var target = $('body');
+ 			var rMax = 23;
+ 			var gMax = 59;
+ 			var bMax = 59;
+
+ 			String.prototype.pad = function(len, c){
+ 			    var s= '', c= c || '0', len= (len || 2)-this.length;
+ 			    while(s.length<len) s+= c;
+ 			    return s+this;
+ 			}
+
+ 			Number.prototype.pad = function(len, c){
+ 			    return String(this).pad(len,c);
+ 			}
+
+ 			for( r = 0; r <= rMax; r++ ){
+
+ 				for( g = 0; g <= gMax; g++ ){
+
+ 					for( b = 0; b <= bMax; b++ ){
+
+ 						var hex = '#'+ r.pad(2) +''+ g.pad(2) +''+ b.pad(2);
+
+ 						console.log(hex);
+ 						target.append('<span style="background-color:'+ hex +'"></span>');
+
+ 					}
+
+ 				}
+
+ 			}
+
+ 		})();
+    </script>
+  </body>
+</html>
+                                
